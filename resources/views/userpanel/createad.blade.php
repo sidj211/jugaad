@@ -26,7 +26,7 @@
         *************************************-->
         <section class="tg-dbsectionspace tg-haslayout">
             <div class="row">
-                <form class="tg-formtheme tg-formdashboard" method="POST" action="/frontend">
+                <form class="tg-formtheme tg-formdashboard" method="POST" action="/frontend" files="true" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <fieldset>
                         <div class="tg-postanad">
@@ -70,11 +70,11 @@
                                             <span>Or</span>
                                             <span class="tg-btn">Select Files</span>
                                             <span>Maximum upload file size: 500 KB</span>
-                                            <input id="tg-photogallery" class="tg-fileinput" type="file" name="photo_id">
+                                            <input id="tg-photogallery" class="tg-fileinput" type="file" name="photo_id[]" multiple>
                                         </label>
 
                                         {{--photo gallery--}}
-                                        {{--<div class="tg-horizontalthemescrollbar tg-profilephotogallery">
+                                        {{--<div class="tg-horizontalthemescraollbar tg-profilephotogallery">
                                             <ul>
                                                 <li>
                                                     <figure>

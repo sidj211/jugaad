@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ad;
+use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,6 +32,7 @@ class FrontendController extends Controller
     public function createpost(Request $request)
     {
 
+        return $request->all();
 
     }
 
@@ -53,34 +55,27 @@ class FrontendController extends Controller
     public function store(Request $request)
     {
 
-        $input = $request->all();
-        $user = Auth::user(); //logged in user
+        $data = array(
+            'title' => $request->title,
+            'description' => $request->description,
+            'price'  => $request->price,
+            'subcategory_id' => $request->subcategory_id,
+            'contact' => $request->contact,
+        );
+        $getid = Ad::create($data);
+        if($request->hasfile('photo_id'))
 
-        if ($file=$request->file('photo_id')) //checking if file exits
-        {
-            //file ka name generate karenge then
-            // munipulating the file name
-            $name = time().$file->getClientOriginalName();
-
-            // then file ko move karenge directory ke andar
-            $file->move('images',$name);
-
-            // photo model se uska object banaya then usme photo id dali
-            //productimag table has file columne
-            // photo name iski helo se doosri table mai chala gya
-            $photo = Adphoto::create(['file'=>$name]);
-
-            // then with the help of object we will get the id of current image
-
-            //input variable se photo_id column mai name ko replace karkek id daal denge
-            $input['photo_id'] = $photo->id;
-        }
-
-        //products() is the name of the relationship between user and products
-        $temp=$user->ads()->create($input);
+            foreach($request->file('photo_id') as $image)
+            {
+                $name=$image->getClientOriginalName();
+                $image->move(public_path().'/images/', $name);
+                $photo = Photo::create(['file'=>$name,'ad_id'=>$getid->id]);
 
 
-        return json_encode($request->all());
+            }
+
+
+        return json_encode($getid);
     }
 
     /**

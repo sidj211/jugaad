@@ -13,7 +13,7 @@
                             <div class="tg-bannercontent">
                                 <h1>World’s Largest Marketplace</h1>
                                 <h2>Search from 12,45,754 Awesome Verified Ads!</h2>
-                                <form class="tg-formtheme tg-formbannersearch">
+                                <form class="tg-formtheme tg-formbannersearch"  files="true">
                                     <fieldset>
                                         <div class="form-group tg-inputwithicon">
                                             <i class="icon-bullhorn"></i>

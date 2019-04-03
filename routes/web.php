@@ -11,9 +11,22 @@
 |
 */
 
+use App\Ad;
+
 Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('/frontend','FrontendController');
 Route::get('/createpost','FrontendController@showform');
 Route::post('/newpost','FrontendController@createpost')->name('newpost');
+Route::get('/showtest',function(){
+
+    $temp = Ad::find(2)->get();
+
+
+
+    return $temp;
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
