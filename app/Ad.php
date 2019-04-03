@@ -11,4 +11,9 @@ class Ad extends Model
     protected $guarded=[
 
     ];
+
+    public function photo()
+    {
+        return $this->hasMany(Photo::class);
+    }
 }
