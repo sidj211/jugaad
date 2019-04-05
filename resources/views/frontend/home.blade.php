@@ -728,10 +728,36 @@
                 Partners End
         *************************************-->
     </main>
-    <!--************************************
-            Main End
-    *************************************-->
-    <!--************************************
-            Footer Start
-    *************************************-->
-    @endsection
+
+
+    <script type="text/javascript">
+
+        jQuery(document).ready(function ()
+        {
+            jQuery('select[name="Category"]').on('change',function(){
+                var CategoryID = jQuery(this).val();
+                if(CategoryID)
+                {
+                    jQuery.ajax({
+                        url : 'subcategory/getsubcategories/'+CategoryID,
+                        type : "GET",
+                        dataType : "json",
+                        success:function(data)
+                        {
+                            console.log(data);
+                            jQuery('select[name="subcategory_id"]').empty();
+                            jQuery.each(data, function(key,value){
+                                $('select[name="subcategory_id"]').append('<option value="'+ key +'">'+ value +'</option>');
+                            });
+                        }
+                    });
+                }
+                else
+                {
+                    $('select[name="subcategory_id"]').empty();
+                }
+            });
+        });
+    </script>
+
+@endsection

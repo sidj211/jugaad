@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Ad;
+use App\Category;
 use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
 {
@@ -25,8 +27,10 @@ class FrontendController extends Controller
     }
 
     public function showform()
+
     {
-        return view('userpanel.createad');
+        $categories = Category::all();
+        return view('userpanel.createad',compact('categories'));
     }
 
     public function createpost(Request $request)
@@ -55,7 +59,7 @@ class FrontendController extends Controller
     public function store(Request $request)
     {
 
-        $data = array(
+        /*$data = array(
             'title' => $request->title,
             'description' => $request->description,
             'price'  => $request->price,
@@ -72,10 +76,10 @@ class FrontendController extends Controller
                 $photo = Photo::create(['file'=>$name,'ad_id'=>$getid->id]);
 
 
-            }
+            }*/
 
 
-        return json_encode($getid);
+        return json_encode($request->all());
     }
 
     /**
@@ -122,4 +126,28 @@ class FrontendController extends Controller
     {
         //
     }
+
+    public function getsubcategories($id)
+    {
+        $subcategory = DB::table('sub_categories')->where('category_id','=',$id)->pluck('name','id');
+        return json_encode($subcategory);
+    }
+
+    public function getsubccategories($id)
+    {
+        $subcategory = DB::table('subccategories')->where('sub_category_id','=',$id)->pluck('name','id');
+        return json_encode($subcategory);
+    }
+
+    public function createevent(Request $request)
+    {
+        return json_encode($request->all());
+
+    }
+
+    public function showuserdashboard()
+    {
+        return view('userpanel.dashboard');
+    }
+
 }
