@@ -32,4 +32,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Ad::class);
     }
+
+    public function evententries()
+    {
+        return $this->hasMany(EventDetail::class);
+    }
 }

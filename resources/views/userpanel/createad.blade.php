@@ -25,6 +25,17 @@
     </div>
 
     <main id="tg-main" class="tg-main tg-haslayout">
+
+        @if(Session::has('message'))
+            <div class="tg-alert alert alert-info fade in">
+                <p><strong>info: </strong> Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="tg-anchors">
+                    <a class="tg-btndoaction" href="#">Do Action Now</a>
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                </div>
+            </div>
+
+            @endif
         <!--************************************
                 Section Start
         *************************************-->
@@ -187,7 +198,7 @@
 
                                                     <span class="tg-btn">Select Photo</span>
 
-                                                    <input id="tg-photogallery" class="tg-fileinput" type="file" name="photo_id" >
+                                                    <input id="tg-photogallery" class="tg-fileinput" type="file" name="file" >
                                                 </label>
 
                                             </div>

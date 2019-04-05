@@ -125,7 +125,7 @@
                                 <h2>Featured Ads</h2>
                             </div>
                             <div class="tg-description">
-                                <p>Over 10,56,432 Featured Ads</p>
+                                <p>Over  Featured Ads</p>
                             </div>
                         </div>
                     </div>

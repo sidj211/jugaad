@@ -21,6 +21,7 @@ class CreateAdsTable extends Migration
             $table->double('price');
             $table->integer('featured')->default(0);
             $table->integer('status')->default(0);
+            $table->integer('availability')->default(0);
             $table->integer('subcategory_id');
             $table->integer('subccategory_id');
             $table->string('contact');

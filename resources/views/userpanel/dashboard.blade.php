@@ -24,33 +24,13 @@
         *************************************-->
         <div class="tg-dbsectionspace tg-haslayout tg-alertexamples">
             <div class="tg-alert alert alert-info fade in">
-                <p><strong>info: </strong> Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p><strong>info: </strong>Event Details submitted,it will be live once verified!</p>
                 <div class="tg-anchors">
-                    <a class="tg-btndoaction" href="#">Do Action Now</a>
+                    <a class="tg-btndoaction" href="/newsfeed">Event Page</a>
                     <a href="#" class="close" data-dismiss="alert">&times;</a>
                 </div>
             </div>
-            <div class="tg-alert alert alert-warning fade in">
-                <p><strong>Warning:</strong> Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="tg-anchors">
-                    <a class="tg-btndoaction" href="#">Do Action Now</a>
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                </div>
-            </div>
-            <div class="tg-alert alert alert-danger fade in">
-                <p><strong>Danger: </strong>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim aborum.</p>
-                <div class="tg-anchors">
-                    <a class="tg-btndoaction" href="#">Do Action Now</a>
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                </div>
-            </div>
-            <div class="tg-alert alert alert-success fade in">
-                <p><strong>Success:</strong> Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <div class="tg-anchors">
-                    <a class="tg-btndoaction" href="#">Do Action Now</a>
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                </div>
-            </div>
+
         </div>
         <!--************************************
                 Dashboard Alerts End
@@ -64,7 +44,7 @@
                     <div class="tg-dashboardbox tg-statistic">
                         <figure><img src="/assets/images/icons/img-32.png" alt="image description"></figure>
                         <div class="tg-contentbox">
-                            <h2>562</h2>
+                            <h2>{{$adcount}}</h2>
                             <h3>Total Ad Posted</h3>
                             <a class="tg-btnviewdetail fa fa-angle-right" href="javascript:void(0);">View Detail</a>
                         </div>
@@ -74,7 +54,7 @@
                     <div class="tg-dashboardbox tg-statistic">
                         <figure><img src="/assets/images/icons/img-33.png" alt="image description"></figure>
                         <div class="tg-contentbox">
-                            <h2>06</h2>
+                            <h2>0{{$activecount}}</h2>
                             <h3>Featured Ads</h3>
                             <a class="tg-btnviewdetail fa fa-angle-right" href="javascript:void(0);">View Detail</a>
                         </div>

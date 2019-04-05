@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Ad;
 use App\Category;
+use App\EventDetail;
 use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class FrontendController extends Controller
 {
@@ -60,11 +62,14 @@ class FrontendController extends Controller
     public function store(Request $request)
     {
 
-        /*$data = array(
+        $user = Auth::user();
+        $data = array(
+            'user_id' => $user->id,
             'title' => $request->title,
             'description' => $request->description,
             'price'  => $request->price,
             'subcategory_id' => $request->subcategory_id,
+            'subccategory_id' => $request->subccategory_id,
             'contact' => $request->contact,
         );
         $getid = Ad::create($data);
@@ -77,7 +82,7 @@ class FrontendController extends Controller
                 $photo = Photo::create(['file'=>$name,'ad_id'=>$getid->id]);
 
 
-            }*/
+            }
 
 
         return json_encode($request->all());
@@ -142,13 +147,32 @@ class FrontendController extends Controller
 
     public function createevent(Request $request)
     {
-        return json_encode($request->all());
+        $user = Auth::user();
+      /*$eventdetails =  EventDetail::create($request->all());*/
+       $eventdetails=$user->evententries()->create($request->all());
+
+        Session::flash('message', 'Your record has been taken, we will notify you shortly!');
+        return redirect('/createpost');
 
     }
 
     public function showuserdashboard()
     {
-        return view('userpanel.dashboard');
+        $user = Auth::user();
+        $adcount = $user->ads->count();
+
+        $activecount = DB::table('ads')->where('user_id','=',$user->id)->where('featured','=',1)->count();
+        $inactivecount = DB::table('ads')->where('user_id','=',$user->id)->where('status','=',0)->count();
+    //
+        return view('userpanel.dashboard',compact('adcount','activecount','inactivecount'));
+    }
+
+    public function userallads()
+    {
+
+        $user = Auth::user();
+        $ads = $user->ads()->paginate(10);
+        return view('userpanel.myads',compact('ads'));
     }
 
 }

@@ -16,4 +16,14 @@ class Ad extends Model
     {
         return $this->hasMany(Photo::class);
     }
+
+    public function categoryname()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function subcategory()
+    {
+        return $this->belongsTo(SubCategory::class);
+    }
 }

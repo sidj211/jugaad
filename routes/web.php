@@ -21,6 +21,7 @@ Route::get('/createpost','FrontendController@showform');
 Route::post('/newpost','FrontendController@createpost')->name('newpost');
 Route::post('/createevent','FrontendController@createevent')->name('newevent');
 Route::get('/userdashboard','FrontendController@showuserdashboard')->name('userdashboard');
+Route::get('/userallads','FrontendController@userallads')->name('userallads');
 Route::get('/showtest',function(){
 
     $temp = Ad::find(2)->get();

@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class EventDetail extends Model
 {
     //
+    protected $guarded=
+        [
+
+        ];
+
 }
