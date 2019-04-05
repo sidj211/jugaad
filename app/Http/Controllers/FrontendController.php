@@ -18,8 +18,9 @@ class FrontendController extends Controller
     public function index()
     {
 
-        Ad::all();
-        return view('frontend.home',compact('',''));
+
+        $featuredAds=Ad::all()->where('featured','=',1);
+        return view('frontend.home',compact('featuredAds'));
 
 
     }
