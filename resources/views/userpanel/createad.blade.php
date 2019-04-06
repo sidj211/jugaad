@@ -309,7 +309,6 @@
             jQuery('.tg-category').on('click',function(){
                 var value = $(this).attr("value");
                 var selcat = $(this).text();
-
                 if(value)
                 {
                     jQuery.ajax({

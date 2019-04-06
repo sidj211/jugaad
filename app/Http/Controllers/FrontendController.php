@@ -6,6 +6,7 @@ use App\Ad;
 use App\Category;
 use App\EventDetail;
 use App\Photo;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -173,6 +174,21 @@ class FrontendController extends Controller
         $user = Auth::user();
         $ads = $user->ads()->paginate(10);
         return view('userpanel.myads',compact('ads'));
+    }
+
+    public function profilesetting()
+    {
+        return view('userpanel.profilesetting');
+
+    }
+
+    public function updateprofilephoto(Request $request)
+    {
+        $user = Auth::user();
+        User::findOrFail($user->id)->update(['file'=>$request->file]);
+        Session::flash('message', 'Profile photo updated successfully!');
+        return redirect('/profilesetting');
+
     }
 
 }

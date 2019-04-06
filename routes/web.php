@@ -22,6 +22,8 @@ Route::post('/newpost','FrontendController@createpost')->name('newpost');
 Route::post('/createevent','FrontendController@createevent')->name('newevent');
 Route::get('/userdashboard','FrontendController@showuserdashboard')->name('userdashboard');
 Route::get('/userallads','FrontendController@userallads')->name('userallads');
+Route::get('/profilesetting','FrontendController@profilesetting')->name('setting');
+Route::post('/updatephoto','FrontendController@updateprofilephoto')->name('updatephoto');
 Route::get('/showtest',function(){
 
     $temp = Ad::find(2)->get();
