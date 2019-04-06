@@ -48,7 +48,7 @@
                                     <h2>Profile Photo</h2>
                                 </div>
                                 <div class="tg-dashboardholder">
-                                    <form method="post" action="/updatephoto">
+                                    <form method="post" action="/updatephoto" enctype="multipart/form-data" files="true">
                                         {{csrf_field()}}
                                         <label class="tg-fileuploadlabel" for="tg-photogallery">
                                             <span>Drop files anywhere to upload</span>

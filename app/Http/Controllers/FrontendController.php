@@ -185,10 +185,20 @@ class FrontendController extends Controller
     public function updateprofilephoto(Request $request)
     {
         $user = Auth::user();
-        User::findOrFail($user->id)->update(['file'=>$request->file]);
+
+        if($file = $request->file('file'))
+        {
+            $name = time().$file->getClientOriginalName();
+            $file->move('profilephoto',$name);
+            User::findOrFail($user->id)->update(['file'=>$name]);
+        }
         Session::flash('message', 'Profile photo updated successfully!');
         return redirect('/profilesetting');
 
     }
 
+    public function privacysetting()
+    {
+        return view('userpanel.privacysetting');
+    }
 }

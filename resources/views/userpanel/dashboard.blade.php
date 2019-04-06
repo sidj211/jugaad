@@ -22,7 +22,7 @@
         <!--************************************
                 Dashboard Alerts Start
         *************************************-->
-        <div class="tg-dbsectionspace tg-haslayout tg-alertexamples">
+  {{--      <div class="tg-dbsectionspace tg-haslayout tg-alertexamples">
             <div class="tg-alert alert alert-info fade in">
                 <p><strong>info: </strong>Event Details submitted,it will be live once verified!</p>
                 <div class="tg-anchors">
@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-        </div>
+        </div>--}}
         <!--************************************
                 Dashboard Alerts End
         *************************************-->

@@ -39,9 +39,7 @@
     @yield('styles')
 </head>
 <body class="tg-home tg-homeone">
-<!--[if lt IE 8]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
+
 <!--************************************
         Wrapper Start
 *************************************-->
@@ -54,15 +52,21 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <ul class="tg-navcurrency">
-                            <li><a href="#" data-toggle="modal" data-target="#tg-modalselectcurrency">select currency</a></li>
-                            <li><a href="#" data-toggle="modal" data-target="#tg-modalpriceconverter">Price converter</a></li>
-                        </ul>
+
+
+                        @if(Auth::guest())
+                            <ul class="tg-navcurrency">
+                                <li><a href="#" data-toggle="modal" data-target="#tg-modalselectcurrency">Register</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#tg-modalpriceconverter">Login</a></li>
+                            </ul>
+                            @else
+
+                            @endif
                         <div class="dropdown tg-themedropdown tg-userdropdown">
                             <a href="javascript:void(0);" id="tg-adminnav" class="tg-btndropdown" data-toggle="dropdown">
-                                <span class="tg-userdp"><img src="/assets/images/author/img-01.jpg" alt="image description"></span>
-                                <span class="tg-name">Hi! Angelena</span>
-                                <span class="tg-role">Administrator</span>
+                                <span class="tg-userdp"><img src="/profilephoto/{{Auth::user()->file}}" style="height: 40px;width: 40px" alt="image description"></span>
+                                <span class="tg-name">Hi! {{Auth::user()->name}}</span>
+                                <span class="tg-role">User</span>
                             </a>
                             <ul class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-adminnav">
                                 <li>
@@ -127,11 +131,17 @@
                                         <span>Privacy Settings</span>
                                     </a>
                                 </li>
+
                                 <li>
-                                    <a href="javascript:void(0);">
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                         <i class="icon-exit"></i>
                                         <span>Logout</span>
                                     </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
                                 </li>
                             </ul>
                         </div>

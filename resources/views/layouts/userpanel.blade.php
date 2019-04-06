@@ -138,13 +138,13 @@
                 <nav id="tg-navdashboard" class="tg-navdashboard">
                     <ul>
                         <li>
-                            <a href="dashboard.html">
+                            <a href="/userdashboard">
                                 <i class="icon-chart-bars"></i>
                                 <span> Insights</span>
                             </a>
                         </li>
                         <li>
-                            <a href="dashboard-profile-setting.html">
+                            <a href="/profilesetting">
                                 <i class="icon-cog"></i>
                                 <span>Profile Settings</span>
                             </a>
@@ -155,13 +155,13 @@
                                 <span>My Ads</span>
                             </a>
                             <ul class="sub-menu">
-                                <li><a href="dashboard-myads.html">All Ads</a></li>
-                                <li><a href="dashboard-myads.html">Featured Ads</a></li>
+                                <li><a href="/userallads">All Ads</a></li>
+                                {{--<li><a href="dashboard-myads.html">Featured Ads</a></li>
                                 <li><a href="dashboard-myads.html">Active Ads</a></li>
                                 <li><a href="dashboard-myads.html">Inactive Ads</a></li>
                                 <li><a href="dashboard-myads.html">Sold Ads</a></li>
                                 <li><a href="dashboard-myads.html">Expired Ads</a></li>
-                                <li><a href="dashboard-myads.html">Deleted Ads</a></li>
+                                <li><a href="dashboard-myads.html">Deleted Ads</a></li>--}}
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
@@ -188,7 +188,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="dashboard-profile-setting.html">
+                            <a href="/privacysetting">
                                 <i class="icon-star"></i>
                                 <span>Privacy Settings</span>
                             </a>
