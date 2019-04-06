@@ -11,8 +11,8 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="tg-bannercontent">
-                                <h1>World’s Largest Marketplace</h1>
-                                <h2>Search from 12,45,754 Awesome Verified Ads!</h2>
+                                <h1>Make your Jugaad.</h1>
+                                <h2>Search from Awesome Verified Ads and much more!</h2>
                                 <form class="tg-formtheme tg-formbannersearch"  files="true">
                                     <fieldset>
                                         <div class="form-group tg-inputwithicon">
@@ -65,7 +65,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-push-1 col-lg-10">
                         <div class="tg-categoriessearch">
                             <div class="tg-title">
-                                <h2><span>Boost your search with</span> Trending Categories</h2>
+                                <h2><span>Seach Materials shared by students with</span> Trending Categories</h2>
                             </div>
                             <div id="tg-categoriesslider" class="tg-categoriesslider tg-categories owl-carousel">
                                 <div class="tg-category">
@@ -131,7 +131,7 @@
                     </div>
                     <div class="tg-ads">
 
-                        @foreach($featuredAds as $featuredproduct)
+                        {{--@foreach($featuredAds as $featuredproduct)
                         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
                             <div class="tg-ad tg-verifiedad">
                                 <figure>
@@ -159,7 +159,7 @@
                                 </div>
                             </div>
                         </div>
-                        @endforeach
+                        @endforeach--}}
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="tg-btnbox">

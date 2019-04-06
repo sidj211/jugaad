@@ -60,91 +60,92 @@
                                 <li><a href="#" data-toggle="modal" data-target="#tg-modalpriceconverter">Login</a></li>
                             </ul>
                             @else
+                            <div class="dropdown tg-themedropdown tg-userdropdown">
+                                <a href="javascript:void(0);" id="tg-adminnav" class="tg-btndropdown" data-toggle="dropdown">
+                                    <span class="tg-userdp"><img src="/profilephoto/{{Auth::user()->file}}" style="height: 40px;width: 40px" alt="image description"></span>
+                                    <span class="tg-name">Hi! {{Auth::user()->name}}</span>
+                                    <span class="tg-role">User</span>
+                                </a>
+                                <ul class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-adminnav">
+                                    <li>
+                                        <a href="dashboard.html">
+                                            <i class="icon-chart-bars"></i>
+                                            <span>Insights</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="dashboard-profile-setting.html">
+                                            <i class="icon-cog"></i>
+                                            <span>Profile Settings</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="javascript:void(0);">
+                                            <i class="icon-layers"></i>
+                                            <span>My Ads</span>
+                                        </a>
+                                        <ul>
+                                            <li><a href="dashboard-myads.html">All Ads</a></li>
+                                            <li><a href="dashboard-myads.html">Featured Ads</a></li>
+                                            <li><a href="dashboard-myads.html">Active Ads</a></li>
+                                            <li><a href="dashboard-myads.html">Inactive Ads</a></li>
+                                            <li><a href="dashboard-myads.html">Sold Ads</a></li>
+                                            <li><a href="dashboard-myads.html">Expired Ads</a></li>
+                                            <li><a href="dashboard-myads.html">Deleted Ads</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="dashboard-postanad.html">
+                                            <i class="icon-layers"></i>
+                                            <span>Dashboard Post Ad</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="javascript:void(0);">
+                                            <i class="icon-envelope"></i>
+                                            <span>Offers/Messages</span>
+                                        </a>
+                                        <ul>
+                                            <li><a href="dashboard-offermessages.html">Offer Received</a></li>
+                                            <li><a href="dashboard-offermessages.html">Offer Sent</a></li>
+                                            <li><a href="dashboard-offermessages.html">Trash</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="dashboard-payments.html">
+                                            <i class="icon-cart"></i>
+                                            <span>Payments</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="dashboard-myfavourites.html">
+                                            <i class="icon-heart"></i>
+                                            <span>My Favourite</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="dashboard-privacy-setting.html">
+                                            <i class="icon-star"></i>
+                                            <span>Privacy Settings</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            <i class="icon-exit"></i>
+                                            <span>Logout</span>
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
 
                             @endif
-                        <div class="dropdown tg-themedropdown tg-userdropdown">
-                            <a href="javascript:void(0);" id="tg-adminnav" class="tg-btndropdown" data-toggle="dropdown">
-                                <span class="tg-userdp"><img src="/profilephoto/{{Auth::user()->file}}" style="height: 40px;width: 40px" alt="image description"></span>
-                                <span class="tg-name">Hi! {{Auth::user()->name}}</span>
-                                <span class="tg-role">User</span>
-                            </a>
-                            <ul class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-adminnav">
-                                <li>
-                                    <a href="dashboard.html">
-                                        <i class="icon-chart-bars"></i>
-                                        <span>Insights</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="dashboard-profile-setting.html">
-                                        <i class="icon-cog"></i>
-                                        <span>Profile Settings</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="javascript:void(0);">
-                                        <i class="icon-layers"></i>
-                                        <span>My Ads</span>
-                                    </a>
-                                    <ul>
-                                        <li><a href="dashboard-myads.html">All Ads</a></li>
-                                        <li><a href="dashboard-myads.html">Featured Ads</a></li>
-                                        <li><a href="dashboard-myads.html">Active Ads</a></li>
-                                        <li><a href="dashboard-myads.html">Inactive Ads</a></li>
-                                        <li><a href="dashboard-myads.html">Sold Ads</a></li>
-                                        <li><a href="dashboard-myads.html">Expired Ads</a></li>
-                                        <li><a href="dashboard-myads.html">Deleted Ads</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="dashboard-postanad.html">
-                                        <i class="icon-layers"></i>
-                                        <span>Dashboard Post Ad</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="javascript:void(0);">
-                                        <i class="icon-envelope"></i>
-                                        <span>Offers/Messages</span>
-                                    </a>
-                                    <ul>
-                                        <li><a href="dashboard-offermessages.html">Offer Received</a></li>
-                                        <li><a href="dashboard-offermessages.html">Offer Sent</a></li>
-                                        <li><a href="dashboard-offermessages.html">Trash</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="dashboard-payments.html">
-                                        <i class="icon-cart"></i>
-                                        <span>Payments</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="dashboard-myfavourites.html">
-                                        <i class="icon-heart"></i>
-                                        <span>My Favourite</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="dashboard-privacy-setting.html">
-                                        <i class="icon-star"></i>
-                                        <span>Privacy Settings</span>
-                                    </a>
-                                </li>
 
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        <i class="icon-exit"></i>
-                                        <span>Logout</span>
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -362,35 +363,58 @@
         <button type="button" class="tg-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
         <div class="modal-content tg-thememodalcontent">
             <div class="tg-title">
-                <strong>Currency Converter</strong>
+
             </div>
-            <form class="tg-formtheme tg-formcurencyconverter">
-                <fieldset>
-                    <div class="form-group">
-                        <div id="tg-flagstraptwo" class="tg-flagstrap" data-input-name="country"></div>
-                        <div class="tg-curencyrateetc">
-                            <span>120<sup>$</sup></span>
-                            <p>1 USD = 0.784769 GBP</p>
+            <div class="tg-logingarea">
+                <h2>Login Now</h2>
+                <form class="tg-formtheme tg-formloging" method="POST" action="{{ route('login') }}">
+                    {{ csrf_field() }}
+                    <fieldset>
+
+
+                        <div class="form-group row">
+
+
+                            <div class="col-md-12">
+                                <input id="email" type="email" placeholder="E-mail"class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <span class="tg-iconseprator"><i><img src="/assets/images/icons/img-36.png" alt="image description"></i></span>
-                    </div>
-                    <div class="form-group">
-                        <div id="tg-flagstrapthree" class="tg-flagstrap" data-input-name="country"></div>
-                        <div class="tg-curencyrateetc">
-                            <span>94.1723<sup>£</sup></span>
-                            <p>1 GBP = 1.27426 USD</p>
+                        <div class="form-group row">
+
+
+                            <div class="col-md-12">
+                                <input id="password" placeholder="Password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <span class="tg-lastupdate">Last update on <time datetime="2017-08-08">2017-06-12 12:35 local time</time></span>
-                    </div>
-                    <div class="form-group">
-                        <button class="tg-btn" type="button">Convert Now</button>
-                    </div>
-                </fieldset>
-            </form>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-success">
+                                    {{ __('Login') }}
+                                </button>
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         </div>
     </div>
 </div>
