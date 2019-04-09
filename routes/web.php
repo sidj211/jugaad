@@ -39,3 +39,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/subcategory/{subcategory}','FrontendController@getsubcategories');
 Route::get('/subccategory/{subcategory}','FrontendController@getsubccategories');
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/createpost','FrontendController@showform');
+    Route::post('/createevent','FrontendController@createevent')->name('newevent');
+
+});

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BootStrap HTML5 CSS3 Theme</title>
+    <title>Jugaad|Lagaoo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -40,13 +40,9 @@
 </head>
 <body class="tg-home tg-homeone">
 
-<!--************************************
-        Wrapper Start
-*************************************-->
+
 <div id="tg-wrapper" class="tg-wrapper tg-haslayout">
-    <!--************************************
-            Header Start
-    *************************************-->
+
     <header id="tg-header" class="tg-header tg-haslayout">
         <div class="tg-topbar">
             <div class="container">
@@ -154,8 +150,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <strong class="tg-logo"><a href="index-2.html"><img src="/assets/images/logo.png" alt="company logo here"></a></strong>
-                        <a class="tg-btn" href="dashboard-postanad.html">
+                        <strong class="tg-logo" style="margin-right: 0px"><a href="index-2.html"><img src="/assets/images/icons/jugaad.svg" alt="company logo here"></a></strong>
+                        <a class="tg-btn" href="/createpost">
                             <i class="icon-bookmark"></i>
                             <span>post an ad</span>
                         </a>
@@ -170,12 +166,9 @@
                             </div>
                             <div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
                                 <ul>
-                                    <li class="menu-item-has-children">
-                                        <a href="javascript:void(0);">Home</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="index-2.html">Home V1</a></li>
-                                            <li><a href="indexv2.html">Home V2</a></li>
-                                        </ul>
+                                    <li>
+                                        <a href="/frontend">Home</a>
+
                                     </li>
                                     <li class="menu-item-has-children current-menu-item">
                                         <a href="javascript:void(0);">Listings</a>
@@ -217,6 +210,14 @@
                                             <li><a href="loginsignup.html">Login/Register</a></li>
                                         </ul>
                                     </li>
+                                    <li>
+                                        <a href="#">About Us</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#">Contact Us</a>
+
+                                    </li>
                                 </ul>
                             </div>
                         </nav>
@@ -225,9 +226,7 @@
             </div>
         </div>
     </header>
-    <!--************************************
-            Header End
-    *************************************-->
+
 @yield('content')
 
 
@@ -291,36 +290,36 @@
                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                         <div class="tg-widget tg-widgettext">
                             <div class="tg-widgetcontent">
-                                <strong class="tg-logo"><a href="javascript:void(0);"><img src="/assets/images/logof.png" alt="image description"></a></strong>
-                                <div class="tg-description">
-                                    <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua anii ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo aute irurel in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
-                                </div>
+                                <strong class="tg-logo"><a href="javascript:void(0);"><img src="/assets/images/logol.svg"  alt="image description"></a></strong>
+                              <div class="tg-description">
+
+                              </div>
                                 <div class="tg-followus">
-                                    <strong>Follow Us:</strong>
+                                    <strong></strong>
                                     <ul class="tg-socialicons">
-                                        <li class="tg-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
+                                        {{--<li class="tg-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
                                         <li class="tg-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
                                         <li class="tg-linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
                                         <li class="tg-googleplus"><a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a></li>
-                                        <li class="tg-rss"><a href="javascript:void(0);"><i class="fa fa-rss"></i></a></li>
+                                        <li class="tg-rss"><a href="javascript:void(0);"><i class="fa fa-rss"></i></a></li>--}}
                                     </ul>
-                                    <ul class="tg-appsnav">
-                                        <li><a href="javascript:void(0);"><img src="/assets/images/apps-01.png" alt="image description"></a></li>
-                                        <li><a href="javascript:void(0);"><img src="/assets/images/apps-02.png" alt="image description"></a></li>
-                                    </ul>
+
                                 </div>
                                 <nav class="tg-footernav">
                                     <ul>
-                                        <li><a href="javascript:void(0);">Listing Policy</a></li>
+                                        {{--<li><a href="javascript:void(0);">Listing Policy</a></li>
                                         <li><a href="javascript:void(0);">Terms of Use</a></li>
                                         <li><a href="javascript:void(0);">Privacy Policy</a></li>
                                         <li><a href="javascript:void(0);">Mobiles Policy</a></li>
                                         <li><a href="javascript:void(0);">Change Currency</a></li>
                                         <li><a href="javascript:void(0);">Sitemap</a></li>
-                                        <li><a href="javascript:void(0);">News</a></li>
+                                        <li><a href="javascript:void(0);">News</a></li>--}}
                                     </ul>
                                 </nav>
-                                <span class="tg-copyright">2017 All Rights Reserved &copy; Classified PRO</span>
+                                <br>
+                                <br>
+                                <br>
+                                <span class="tg-copyright">2019 All Rights Reserved &copy; Jugaad</span>
                             </div>
                         </div>
                     </div>
@@ -328,16 +327,10 @@
             </div>
         </div>
     </footer>
-    <!--************************************
-            Footer End
-    *************************************-->
+
 </div>
-<!--************************************
-        Wrapper End
-*************************************-->
-<!--************************************
-        Theme Modal Box Start
-*************************************-->
+
+
 <div id="tg-modalselectcurrency" class="modal fade tg-thememodal tg-modalselectcurrency" tabindex="-1" role="dialog">
     <div class="modal-dialog tg-thememodaldialog" role="document">
         <button type="button" class="tg-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -358,6 +351,7 @@
         </div>
     </div>
 </div>
+
 <div id="tg-modalpriceconverter" class="modal fade tg-thememodal tg-modalpriceconverter" tabindex="-1" role="dialog">
     <div class="modal-dialog tg-thememodaldialog" role="document">
         <button type="button" class="tg-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -418,9 +412,9 @@
         </div>
     </div>
 </div>
-<!--************************************
-        Theme Modal Box End
-*************************************-->
+
+
+
 <script src="/assets/js/vendor/jquery-library.js"></script>
 <script src="/assets/js/vendor/bootstrap.min.js"></script>
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyCR-KEWAVCn52mSdeVeTqZjtqbmVJyfSus&amp;language=en"></script>
